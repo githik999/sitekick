@@ -1,53 +1,27 @@
 {
 
 "manifest_version": 2,
-"name": "just a site kick",
+"name": "rich strong",
 "description": "show website's ip and country flag.show latency.proxy control",
 "version": "1.0",
 
 "icons": {
-	"48": "icons/64.png",
-	"96": "icons/64.png"
-},
-
-"browser_specific_settings": {
-	"gecko": {
-		"strict_min_version": "56.0a1"
-	}
+	"48": "image/logo.png",
+	"96": "image/logo.png"
 },
 
 "background": {
 	"scripts": [
-		"background/main.js"
+		"background/config.js","background/global_data.js","background/lib.js","background/reload_page.js","background/time_out.js","background/tab.js","background/proxy.js"
 	]
 },
 
-"options_ui": {
-"page": "options/options.html",
-"browser_style": true
-},
-
 "page_action": {
-"browser_style": true,
-"default_icon": {
-	"19": "icons/64.png",
-	"38": "icons/64.png"
-},
-"show_matches": ["https://*.org/*"],
-"default_title": "kick",
-"default_popup": "popup/geo.html"
+	"default_icon": "image/logo.png"
 },
 
-"browser_action": {
-"browser_style": true,
-"default_icon": {
-	"16": "icons/64.png",
-	"32": "icons/64.png"
-},
-"default_title": "settings",
-"default_popup": "popup/browser_action.html"
-},
+"devtools_page": "popup/browser_action.html",
 
-"permissions": ["proxy", "webRequest","devtools","storage", "<all_urls>"]
+"permissions": ["tabs","proxy", "webRequest","devtools","browserSettings", "<all_urls>"]
 
 }
